@@ -1,0 +1,24 @@
+{
+  "name": "@webwaka/organelle-subject-registry",
+  "version": "0.1.0",
+  "description": "WebWaka Subject Registry Organelle - Atomic primitive for subject identity modeling",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Tests not yet implemented\" && exit 0"
+  },
+  "keywords": [
+    "webwaka",
+    "organelle",
+    "identity",
+    "subject-registry"
+  ],
+  "author": "WebWaka",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {}
+}
