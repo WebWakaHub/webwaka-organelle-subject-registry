@@ -1,34 +1,75 @@
-# Repository Purged — Remediation Protocol
+# SubjectRegistry Organelle
 
-**Date:** 2026-02-27
-**Authority:** webwaka007 (Founder)
-**Protocol:** REMEDIATION-01
+**Organelle ID:** ORG-IA-SUBJECT_REGISTRY-v0.1.0
+**Version:** 0.1.0
+**Layer:** Organelle (smallest functional unit in WebWaka biological hierarchy)
 
----
+## Overview
 
-## Status: AWAITING LEGITIMATE RE-EXECUTION
+The SubjectRegistry organelle provides a self-contained, deterministic functional unit
+within the WebWaka system. It encapsulates domain-specific logic behind well-defined
+interfaces and communicates through typed events.
 
-This repository has been **purged** as part of the Organelle-Universe Remediation Plan.
+## Architecture
 
-### Reason for Purge
+```
+┌─────────────────────────────────────────┐
+│         SubjectRegistryOrchestrator                 │
+│                                         │
+│  ┌──────────┐  ┌──────────────────────┐ │
+│  │  State    │  │  SubjectRegistryEntity          │ │
+│  │  Machine  │  │  (Domain Logic)      │ │
+│  └──────────┘  └──────────────────────┘ │
+│                                         │
+│  ┌──────────┐  ┌──────────┐  ┌───────┐ │
+│  │ Storage   │  │ Events   │  │ Obs.  │ │
+│  │ Interface │  │ Interface│  │ Port  │ │
+│  └──────────┘  └──────────┘  └───────┘ │
+└─────────────────────────────────────────┘
+```
 
-A deep audit conducted on 2026-02-27 revealed that this repository contained only **template-level code** that was generated as part of an illegitimate batch closure of organelle-universe issues. The code did not represent real, phase-by-phase work as mandated by the 7-Phase Lifecycle and 8-Step Execution Protocol.
+## Quick Start
 
-Specific violations found:
-- **Zero test files** — P3 (Testing) and P4 (Verification) phases were rubber-stamped
-- **Only 1-2 commits** — Expected multi-phase commit history was absent
-- **Template-identical structures** — Code was batch-generated, not individually crafted
-- **Agent protocol violations** — Issues were closed by agents different from those assigned
+```typescript
+import { SubjectRegistryOrchestrator } from "@webwaka/organelle-subject-registry";
 
-### What Happens Next
+const orchestrator = new SubjectRegistryOrchestrator({
+  id: "my-subject-registry",
+  name: "My SubjectRegistry",
+  maxConcurrency: 5,
+  timeoutMs: 30000,
+  retryPolicy: { maxRetries: 3, backoffMs: 100, backoffMultiplier: 2 },
+});
 
-This organelle will be re-executed from scratch following the full protocol:
-- P0: Specification (3 tasks with real deliverables)
-- P1: Design (3 tasks with real deliverables)
-- P2: Implementation (3 tasks with real deliverables)
-- P3: Testing (3 tasks with real test suites)
-- P4: Integration/Verification (3 tasks with real verification)
-- P5: Documentation/Deployment (3 tasks with real documentation)
-- P6: Ratification (3 tasks with real ratification artifacts)
+const result = await orchestrator.execute({
+  type: "CREATE",
+  payload: { name: "example" },
+  correlationId: "corr-001",
+  timestamp: Date.now(),
+});
+```
 
-Each task will be executed by the assigned agent using the correct PAT, with real commits pushed to this repository.
+## API Reference
+
+### SubjectRegistryOrchestrator
+
+| Method | Returns | Description |
+|:-------|:--------|:------------|
+| `execute(command)` | `Promise<Result>` | Execute a command |
+| `query(query)` | `QueryResult` | Query current state |
+| `getState()` | `State` | Get current state |
+| `getMetrics()` | `OperationMetrics` | Get operation metrics |
+| `getTelemetry()` | `TelemetryData` | Get telemetry data |
+| `reset()` | `Promise<void>` | Reset to IDLE |
+| `terminate()` | `Promise<void>` | Terminate organelle |
+
+## Testing
+
+```bash
+npm test          # Run all tests
+npm test -- --coverage  # Run with coverage
+```
+
+## License
+
+WebWaka Internal — All Rights Reserved
