@@ -1,0 +1,16 @@
+{
+  "organelleId": "ORG-IA-SUBJECT_REGISTRY-v0.1.0",
+  "name": "SubjectRegistry",
+  "version": "0.1.0",
+  "layer": "organelle",
+  "status": "VERIFIED",
+  "interfaces": [
+    "ISubjectRegistry",
+    "ISubjectRegistryStorage",
+    "ISubjectRegistryEvents",
+    "ISubjectRegistryObservability"
+  ],
+  "dependencies": [],
+  "registeredAt": "2026-02-27T00:00:00Z",
+  "verifiedAt": "2026-02-27T00:00:00Z"
+}
