@@ -1,4 +1,4 @@
-# SubjectRegistry — State Machine Design
+# BoundaryContext — State Machine Design
 
 ## States
 

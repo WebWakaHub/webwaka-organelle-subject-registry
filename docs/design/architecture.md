@@ -1,13 +1,13 @@
-# SubjectRegistry — Architectural Design
+# BoundaryContext — Architectural Design
 
 ## Component Diagram
 
 ```
 ┌─────────────────────────────────────────┐
-│           SubjectRegistry Orchestrator              │
+│           BoundaryContext Orchestrator              │
 │                                         │
 │  ┌──────────┐  ┌──────────────────────┐ │
-│  │  State    │  │  SubjectRegistryEntity          │ │
+│  │  State    │  │  BoundaryContextEntity          │ │
 │  │  Machine  │  │  (Domain Logic)      │ │
 │  └──────────┘  └──────────────────────┘ │
 │                                         │

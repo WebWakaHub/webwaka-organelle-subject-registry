@@ -1,14 +1,14 @@
-# SubjectRegistry — Interface Contracts
+# BoundaryContext — Interface Contracts
 
 ## Primary Interface
 
 ```typescript
-interface ISubjectRegistry {
+interface IBoundaryContext {
   readonly id: string;
-  readonly state: SubjectRegistryState;
+  readonly state: BoundaryContextState;
   
-  execute(command: SubjectRegistryCommand): Promise<SubjectRegistryResult>;
-  query(query: SubjectRegistryQuery): SubjectRegistryQueryResult;
+  execute(command: BoundaryContextCommand): Promise<BoundaryContextResult>;
+  query(query: BoundaryContextQuery): BoundaryContextQueryResult;
   reset(): void;
   terminate(): void;
   getMetrics(): OperationMetrics;
@@ -18,9 +18,9 @@ interface ISubjectRegistry {
 ## Storage Interface
 
 ```typescript
-interface ISubjectRegistryStorage {
-  save(entity: SubjectRegistryEntity): Promise<void>;
-  load(id: string): Promise<SubjectRegistryEntity | null>;
+interface IBoundaryContextStorage {
+  save(entity: BoundaryContextEntity): Promise<void>;
+  load(id: string): Promise<BoundaryContextEntity | null>;
   delete(id: string): Promise<boolean>;
 }
 ```
@@ -28,8 +28,8 @@ interface ISubjectRegistryStorage {
 ## Event Interface
 
 ```typescript
-interface ISubjectRegistryEvents {
-  emit(event: SubjectRegistryEvent): void;
-  subscribe(handler: (event: SubjectRegistryEvent) => void): () => void;
+interface IBoundaryContextEvents {
+  emit(event: BoundaryContextEvent): void;
+  subscribe(handler: (event: BoundaryContextEvent) => void): () => void;
 }
 ```
