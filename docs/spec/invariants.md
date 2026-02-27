@@ -1,4 +1,4 @@
-# SubjectRegistry — Invariants & Constraints
+# BoundaryContext — Invariants & Constraints
 
 ## Structural Invariants
 

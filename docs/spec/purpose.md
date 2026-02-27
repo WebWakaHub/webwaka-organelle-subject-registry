@@ -1,12 +1,12 @@
-# SubjectRegistry Organelle — Purpose & Responsibility
+# BoundaryContext Organelle — Purpose & Responsibility
 
-**Organelle:** ORG-IA-SUBJECT_REGISTRY-v0.1.0
+**Organelle:** ORG-TB-BOUNDARY_CONTEXT-v0.1.0
 **Version:** 0.1.0
 **Layer:** Organelle (smallest functional unit)
 
 ## Purpose
 
-The SubjectRegistry organelle is responsible for providing a self-contained, deterministic
+The BoundaryContext organelle is responsible for providing a self-contained, deterministic
 functional unit within the WebWaka biological hierarchy. It encapsulates a single
 domain responsibility and exposes well-defined ports for interaction with other organelles.
 
