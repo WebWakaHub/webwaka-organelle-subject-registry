@@ -1,7 +1,7 @@
 {
-  "name": "@webwaka/organelle-subject-registry",
+  "name": "@webwaka/organelle-boundary-context",
   "version": "0.1.0",
-  "description": "SubjectRegistry organelle for WebWaka biological hierarchy",
+  "description": "BoundaryContext organelle for WebWaka biological hierarchy",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

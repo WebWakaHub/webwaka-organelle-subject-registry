@@ -1,16 +1,16 @@
 /**
- * SubjectRegistry — Public API
- * Organelle: ORG-IA-SUBJECT_REGISTRY-v0.1.0
- * @module @webwaka/organelle-subject-registry
+ * BoundaryContext — Public API
+ * Organelle: ORG-TB-BOUNDARY_CONTEXT-v0.1.0
+ * @module @webwaka/organelle-boundary-context
  */
 
-export { SubjectRegistryOrchestrator } from "./subject-registry-orchestrator";
-export { SubjectRegistryEntity } from "./subject-registry-entity";
-export { SubjectRegistryStateMachine } from "./state-machine";
-export { InMemorySubjectRegistryStorage } from "./storage-interface";
-export type { ISubjectRegistryStorage } from "./storage-interface";
-export { SubjectRegistryEventBus } from "./event-interface";
-export type { ISubjectRegistryEvents } from "./event-interface";
-export { DefaultSubjectRegistryObservability } from "./observability-interface";
-export type { ISubjectRegistryObservability } from "./observability-interface";
+export { BoundaryContextOrchestrator } from "./boundary-context-orchestrator";
+export { BoundaryContextEntity } from "./boundary-context-entity";
+export { BoundaryContextStateMachine } from "./state-machine";
+export { InMemoryBoundaryContextStorage } from "./storage-interface";
+export type { IBoundaryContextStorage } from "./storage-interface";
+export { BoundaryContextEventBus } from "./event-interface";
+export type { IBoundaryContextEvents } from "./event-interface";
+export { DefaultBoundaryContextObservability } from "./observability-interface";
+export type { IBoundaryContextObservability } from "./observability-interface";
 export * from "./types";

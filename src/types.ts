@@ -1,9 +1,9 @@
 /**
- * SubjectRegistry — Core Type Definitions
- * Organelle: ORG-IA-SUBJECT_REGISTRY-v0.1.0
+ * BoundaryContext — Core Type Definitions
+ * Organelle: ORG-TB-BOUNDARY_CONTEXT-v0.1.0
  */
 
-export enum SubjectRegistryState {
+export enum BoundaryContextState {
   IDLE = "IDLE",
   PROCESSING = "PROCESSING",
   COMPLETED = "COMPLETED",
@@ -11,7 +11,7 @@ export enum SubjectRegistryState {
   TERMINATED = "TERMINATED",
 }
 
-export interface SubjectRegistryConfig {
+export interface BoundaryContextConfig {
   readonly id: string;
   readonly name: string;
   readonly maxConcurrency: number;
@@ -25,32 +25,32 @@ export interface RetryPolicy {
   readonly backoffMultiplier: number;
 }
 
-export interface SubjectRegistryCommand {
+export interface BoundaryContextCommand {
   readonly type: string;
   readonly payload: Record<string, unknown>;
   readonly correlationId: string;
   readonly timestamp: number;
 }
 
-export interface SubjectRegistryResult {
+export interface BoundaryContextResult {
   readonly success: boolean;
   readonly data?: Record<string, unknown>;
-  readonly error?: SubjectRegistryError;
+  readonly error?: BoundaryContextError;
   readonly duration: number;
   readonly correlationId: string;
 }
 
-export interface SubjectRegistryQuery {
+export interface BoundaryContextQuery {
   readonly type: string;
   readonly filters?: Record<string, unknown>;
 }
 
-export interface SubjectRegistryQueryResult {
+export interface BoundaryContextQueryResult {
   readonly data: Record<string, unknown>;
   readonly timestamp: number;
 }
 
-export interface SubjectRegistryEvent {
+export interface BoundaryContextEvent {
   readonly type: string;
   readonly source: string;
   readonly data: Record<string, unknown>;
@@ -58,7 +58,7 @@ export interface SubjectRegistryEvent {
   readonly correlationId: string;
 }
 
-export interface SubjectRegistryError {
+export interface BoundaryContextError {
   readonly code: string;
   readonly message: string;
   readonly details?: Record<string, unknown>;
@@ -84,7 +84,7 @@ export interface OperationMetrics {
 
 export interface TelemetryData {
   readonly organelleId: string;
-  readonly state: SubjectRegistryState;
+  readonly state: BoundaryContextState;
   readonly metrics: OperationMetrics;
   readonly timestamp: number;
 }

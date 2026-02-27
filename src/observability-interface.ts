@@ -1,18 +1,18 @@
 /**
- * SubjectRegistry — Observability Interface
- * Organelle: ORG-IA-SUBJECT_REGISTRY-v0.1.0
+ * BoundaryContext — Observability Interface
+ * Organelle: ORG-TB-BOUNDARY_CONTEXT-v0.1.0
  */
 
 import { TelemetryData, OperationMetrics } from "./types";
 
-export interface ISubjectRegistryObservability {
+export interface IBoundaryContextObservability {
   log(level: "DEBUG" | "INFO" | "WARN" | "ERROR", message: string, data?: Record<string, unknown>): void;
   recordMetric(name: string, value: number): void;
   createSpan(name: string): { end: () => void };
   getTelemetry(): TelemetryData;
 }
 
-export class DefaultSubjectRegistryObservability implements ISubjectRegistryObservability {
+export class DefaultBoundaryContextObservability implements IBoundaryContextObservability {
   private readonly logs: Array<{ level: string; message: string; timestamp: number; data?: Record<string, unknown> }>;
   private readonly metrics: Map<string, number[]>;
   private readonly organelleId: string;

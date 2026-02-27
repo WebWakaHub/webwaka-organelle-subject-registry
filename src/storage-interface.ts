@@ -1,18 +1,18 @@
 /**
- * SubjectRegistry — Storage Interface
- * Organelle: ORG-IA-SUBJECT_REGISTRY-v0.1.0
+ * BoundaryContext — Storage Interface
+ * Organelle: ORG-TB-BOUNDARY_CONTEXT-v0.1.0
  */
 
-import { SubjectRegistryState } from "./types";
+import { BoundaryContextState } from "./types";
 
-export interface ISubjectRegistryStorage {
+export interface IBoundaryContextStorage {
   save(id: string, data: Record<string, unknown>): Promise<void>;
   load(id: string): Promise<Record<string, unknown> | null>;
   delete(id: string): Promise<boolean>;
   list(): Promise<string[]>;
 }
 
-export class InMemorySubjectRegistryStorage implements ISubjectRegistryStorage {
+export class InMemoryBoundaryContextStorage implements IBoundaryContextStorage {
   private readonly store: Map<string, Record<string, unknown>>;
 
   constructor() {

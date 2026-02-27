@@ -1,22 +1,22 @@
 /**
- * SubjectRegistry — Event Interface
- * Organelle: ORG-IA-SUBJECT_REGISTRY-v0.1.0
+ * BoundaryContext — Event Interface
+ * Organelle: ORG-TB-BOUNDARY_CONTEXT-v0.1.0
  */
 
-import { SubjectRegistryEvent } from "./types";
+import { BoundaryContextEvent } from "./types";
 
-type EventHandler = (event: SubjectRegistryEvent) => void;
+type EventHandler = (event: BoundaryContextEvent) => void;
 
-export interface ISubjectRegistryEvents {
-  emit(event: SubjectRegistryEvent): void;
+export interface IBoundaryContextEvents {
+  emit(event: BoundaryContextEvent): void;
   subscribe(handler: EventHandler): () => void;
   getEventCount(): number;
 }
 
-export class SubjectRegistryEventBus implements ISubjectRegistryEvents {
+export class BoundaryContextEventBus implements IBoundaryContextEvents {
   private readonly handlers: Set<EventHandler>;
   private eventCount: number;
-  private readonly eventLog: SubjectRegistryEvent[];
+  private readonly eventLog: BoundaryContextEvent[];
 
   constructor() {
     this.handlers = new Set();
@@ -24,7 +24,7 @@ export class SubjectRegistryEventBus implements ISubjectRegistryEvents {
     this.eventLog = [];
   }
 
-  emit(event: SubjectRegistryEvent): void {
+  emit(event: BoundaryContextEvent): void {
     this.eventCount++;
     this.eventLog.push(event);
     for (const handler of this.handlers) {
@@ -47,7 +47,7 @@ export class SubjectRegistryEventBus implements ISubjectRegistryEvents {
     return this.eventCount;
   }
 
-  getEventLog(): ReadonlyArray<SubjectRegistryEvent> {
+  getEventLog(): ReadonlyArray<BoundaryContextEvent> {
     return [...this.eventLog];
   }
 }
