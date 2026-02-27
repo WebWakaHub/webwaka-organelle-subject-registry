@@ -1,12 +1,12 @@
-# SubjectRegistry Organelle
+# BoundaryContext Organelle
 
-**Organelle ID:** ORG-IA-SUBJECT_REGISTRY-v0.1.0
+**Organelle ID:** ORG-TB-BOUNDARY_CONTEXT-v0.1.0
 **Version:** 0.1.0
 **Layer:** Organelle (smallest functional unit in WebWaka biological hierarchy)
 
 ## Overview
 
-The SubjectRegistry organelle provides a self-contained, deterministic functional unit
+The BoundaryContext organelle provides a self-contained, deterministic functional unit
 within the WebWaka system. It encapsulates domain-specific logic behind well-defined
 interfaces and communicates through typed events.
 
@@ -14,10 +14,10 @@ interfaces and communicates through typed events.
 
 ```
 ┌─────────────────────────────────────────┐
-│         SubjectRegistryOrchestrator                 │
+│         BoundaryContextOrchestrator                 │
 │                                         │
 │  ┌──────────┐  ┌──────────────────────┐ │
-│  │  State    │  │  SubjectRegistryEntity          │ │
+│  │  State    │  │  BoundaryContextEntity          │ │
 │  │  Machine  │  │  (Domain Logic)      │ │
 │  └──────────┘  └──────────────────────┘ │
 │                                         │
@@ -31,11 +31,11 @@ interfaces and communicates through typed events.
 ## Quick Start
 
 ```typescript
-import { SubjectRegistryOrchestrator } from "@webwaka/organelle-subject-registry";
+import { BoundaryContextOrchestrator } from "@webwaka/organelle-boundary-context";
 
-const orchestrator = new SubjectRegistryOrchestrator({
-  id: "my-subject-registry",
-  name: "My SubjectRegistry",
+const orchestrator = new BoundaryContextOrchestrator({
+  id: "my-boundary-context",
+  name: "My BoundaryContext",
   maxConcurrency: 5,
   timeoutMs: 30000,
   retryPolicy: { maxRetries: 3, backoffMs: 100, backoffMultiplier: 2 },
@@ -51,7 +51,7 @@ const result = await orchestrator.execute({
 
 ## API Reference
 
-### SubjectRegistryOrchestrator
+### BoundaryContextOrchestrator
 
 | Method | Returns | Description |
 |:-------|:--------|:------------|

@@ -1,4 +1,4 @@
-# SubjectRegistry — Deployment Guide
+# BoundaryContext — Deployment Guide
 
 ## Prerequisites
 
@@ -8,7 +8,7 @@
 ## Installation
 
 ```bash
-npm install @webwaka/organelle-subject-registry
+npm install @webwaka/organelle-boundary-context
 ```
 
 ## Configuration

@@ -1,10 +1,10 @@
-# SubjectRegistry — API Reference
+# BoundaryContext — API Reference
 
 ## Types
 
-### SubjectRegistryConfig
+### BoundaryContextConfig
 ```typescript
-interface SubjectRegistryConfig {
+interface BoundaryContextConfig {
   readonly id: string;
   readonly name: string;
   readonly maxConcurrency: number;
@@ -13,9 +13,9 @@ interface SubjectRegistryConfig {
 }
 ```
 
-### SubjectRegistryCommand
+### BoundaryContextCommand
 ```typescript
-interface SubjectRegistryCommand {
+interface BoundaryContextCommand {
   readonly type: string;
   readonly payload: Record<string, unknown>;
   readonly correlationId: string;
@@ -23,12 +23,12 @@ interface SubjectRegistryCommand {
 }
 ```
 
-### SubjectRegistryResult
+### BoundaryContextResult
 ```typescript
-interface SubjectRegistryResult {
+interface BoundaryContextResult {
   readonly success: boolean;
   readonly data?: Record<string, unknown>;
-  readonly error?: SubjectRegistryError;
+  readonly error?: BoundaryContextError;
   readonly duration: number;
   readonly correlationId: string;
 }
