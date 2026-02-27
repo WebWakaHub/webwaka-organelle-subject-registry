@@ -1,6 +1,6 @@
-# SubjectRegistry — Ratification Checklist
+# BoundaryContext — Ratification Checklist
 
-**Organelle:** ORG-IA-SUBJECT_REGISTRY-v0.1.0
+**Organelle:** ORG-TB-BOUNDARY_CONTEXT-v0.1.0
 **Date:** 2026-02-27
 **Status:** RATIFIED
 

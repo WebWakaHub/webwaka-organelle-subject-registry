@@ -1,6 +1,6 @@
-# SubjectRegistry — Constitutional Compliance
+# BoundaryContext — Constitutional Compliance
 
-**Organelle:** ORG-IA-SUBJECT_REGISTRY-v0.1.0
+**Organelle:** ORG-TB-BOUNDARY_CONTEXT-v0.1.0
 **Verified Against:** AGENT_EXECUTION_CONTEXT_MASTER_CONSTITUTION
 
 ## Compliance Matrix

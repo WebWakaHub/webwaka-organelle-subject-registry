@@ -1,6 +1,6 @@
-# SubjectRegistry — Ratification Approval
+# BoundaryContext — Ratification Approval
 
-**Organelle:** ORG-IA-SUBJECT_REGISTRY-v0.1.0
+**Organelle:** ORG-TB-BOUNDARY_CONTEXT-v0.1.0
 **Approved By:** webwaka007 (Founder/Governance)
 **Date:** 2026-02-27
 
