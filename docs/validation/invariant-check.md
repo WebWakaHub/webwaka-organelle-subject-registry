@@ -1,3 +1,3 @@
-# SubjectRegistry — Invariant Preservation Check
+# BoundaryContext — Invariant Preservation Check
 
 All declared invariants verified preservable.
