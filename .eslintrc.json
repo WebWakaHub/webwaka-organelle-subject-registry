@@ -1,0 +1,84 @@
+{
+  "root": true,
+  "plugins": [
+    "@nx"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.js",
+        "*.jsx"
+      ],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "layer:organelle",
+                "onlyDependOnLibsWithTags": [],
+                "_comment": "Organelles are primitives with no dependencies (CONSTITUTION \u00a74.1)"
+              },
+              {
+                "sourceTag": "layer:cell",
+                "onlyDependOnLibsWithTags": [
+                  "layer:organelle"
+                ],
+                "_comment": "Cells may only import from Organelles (CONSTITUTION \u00a74.1)"
+              },
+              {
+                "sourceTag": "layer:tissue",
+                "onlyDependOnLibsWithTags": [
+                  "layer:cell"
+                ],
+                "_comment": "Tissues may only import from Cells (CONSTITUTION \u00a74.1)"
+              },
+              {
+                "sourceTag": "layer:organ",
+                "onlyDependOnLibsWithTags": [
+                  "layer:tissue"
+                ],
+                "_comment": "Organs may only import from Tissues (CONSTITUTION \u00a74.1)"
+              },
+              {
+                "sourceTag": "layer:system",
+                "onlyDependOnLibsWithTags": [
+                  "layer:organ"
+                ],
+                "_comment": "Systems may only import from Organs (CONSTITUTION \u00a74.1)"
+              },
+              {
+                "sourceTag": "layer:organism",
+                "onlyDependOnLibsWithTags": [
+                  "layer:system"
+                ],
+                "_comment": "Organism may only import from Systems (CONSTITUTION \u00a74.1)"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "_constitutional_reference": {
+    "document": "BIOLOGICAL_GOVERNANCE_CONSTITUTION.md",
+    "sections": [
+      "\u00a74.1 Explicit Allowed Dependencies",
+      "\u00a74.2 Explicit Forbidden Patterns"
+    ],
+    "forbidden_patterns": [
+      "No circular dependencies (\u00a74.2)",
+      "No layer skipping (\u00a74.2)",
+      "No upward dependencies (\u00a72.1)",
+      "No same-layer dependencies (\u00a74.2)"
+    ],
+    "hierarchy": "Organelle \u2192 Cell \u2192 Tissue \u2192 Organ \u2192 System \u2192 Organism",
+    "attribution": "webwakaagent3 (Core Platform Architect)",
+    "amended_from": "webwakaagent5 (incorrect attribution per \u00a76.1)",
+    "issue": "WebWakaHub/webwaka-admin-universe#24"
+  }
+}
